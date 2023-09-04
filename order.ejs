@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/style.css">
+  <title>Złóż Zamówienie</title>
+</head>
+<body>
+  <h1>Złóż Zamówienie</h1>
+
+  <form action="/order" method="post">
+    <div>
+      <label for="address">Adres:</label>
+      <input type="text" id="address" name="address" required>
+    </div>
+    <div>
+      <label for="phoneNumber">Numer telefonu:</label>
+      <input type="text" id="phoneNumber" name="phoneNumber" required>
+    </div>
+    <button type="submit">Złóż Zamówienie</button>
+  </form>
+</body>
+</html>

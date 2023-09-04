@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dodaj przepis</title>
+    <link rel="stylesheet" type="text/css" href="/public/style.css"> 
+</head>
+<body>
+    <div class="add-recipe-container">
+        <h2>Dodaj nowy przepis</h2> 
+        <form action="/add-recipe" method="post">
+            <div>
+                <label for="title">Tytuł:</label>
+                <input type="text" id="title" name="title" required>
+            </div>
+            <div>
+                <label for="description">Opis:</label>
+                <textarea id="description" name="description" required></textarea>
+            </div>
+            <div>
+                <label for="ingredients">Składniki:</label>
+                <textarea id="ingredients" name="ingredients" required></textarea>
+            </div>
+            <div>
+                <label for="category">Kategoria:</label>
+                <select id="category" name="category" required>
+                    <option value="Dessert">Deser</option>
+                    <option value="Main Course">Danie główne</option>
+                    <option value="Appetizer">Przystawka</option>
+                    <option value="Drink">Napój</option>
+                    <option value="Other">Inne</option>
+                </select>
+            </div>
+            <div>
+                <label for="difficulty">Trudność:</label>
+                <select id="difficulty" name="difficulty" required>
+                    <option value="Easy">Łatwy</option>
+                    <option value="Medium">Średni</option>
+                    <option value="Hard">Trudny</option>
+                </select>
+            </div>
+                <label for="recipe-image">Zdjęcie przepisu:</label>
+                <input type="file" id="recipe-image" name="image">
+            <div>
+                <button type="submit">Dodaj przepis</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

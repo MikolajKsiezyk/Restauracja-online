@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/style.css">
+    <title>Przepis</title>
+</head>
+<body>
+    <div class="recipe-container">
+        <h1><%= recipe.title %></h1>
+        <p><%= recipe.description %></p>
+        <p>Składniki: <%= recipe.ingredients %></p>
+        <p>Kategoria: <%= recipe.category %></p>
+        <!-- <p>Trudność: <%= recipe.difficulty %></p> -->
+        <p>Utworzony przez: <%= recipe.createdBy ? recipe.createdBy.username : 'Nieznany' %></p>
+        <% if(recipe.image) { %>
+            <img src="<%= recipe.image %>" alt="Zdjęcie przepisu" style="max-width: 100%; border-radius: 8px;"/>
+        <% } %>
+        <form action="/add-to-cart/<%= recipe._id %>" method="post">
+            <button type="submit">Dodaj do koszyka</button>
+        </form>
+    </div>
+</body>
+</html>

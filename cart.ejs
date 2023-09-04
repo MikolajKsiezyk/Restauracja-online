@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/style.css">
+    <title>Koszyk</title>
+</head>
+<body>
+    <div class="recipe-list">
+        <% if (cart && cart.items) { %>
+            <% cart.items.forEach(item => { %>
+                <div class="recipe-card">
+                    <form action="/update-cart/<%= item._id.toString() %>" method="post">
+                        <h2><%= item.recipeId.title %></h2>
+                        <h4><%= item.recipeId.category %></h4>
+                        <p><%= item.recipeId.ingredients %></p>
+                        <label for="quantity">Ilość:</label>
+                        <input type="number" id="quantity" name="quantity" value="<%= item.quantity %>">
+                        <button type="submit" name="action" value="update">Aktualizuj</button>
+                        <button type="submit" name="action" value="remove">Usuń</button>
+                    </form>
+                </div>
+            <% }); %>
+        <% } else { %>
+            <p>Koszyk jest pusty.</p>
+        <% } %>
+    <div>
+        <button><a href="/">Strona Główna</button>
+        <button><a href="/order">Zloz zamowienie</button>
+    </div>
+</body>
+</html>
